@@ -1,0 +1,31 @@
+/* Configuração padrão para desktops */
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12 colunas em desktops */
+  gap: 16px;
+  max-width: 1200px; /* Limita a largura máxima */
+  margin: 0 auto;
+  padding: 0 8.33%; /* Espaçamento nas laterais */
+  min-height: 100vh; /* Garante que ocupe toda a altura da viewport */
+  background-color: var(--violet-300);
+}
+
+.alinhamento {
+  grid-column: span 12; /* Ocupa todas as 12 colunas */
+  min-height: 1200px; /* Altura mínima definida */
+  background-color: var(--violet-100);
+}
+
+/* Ajustes de responsividade para telas menores */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(6, 1fr); /* Reduz para 6 colunas em tablets e smartphones */
+    padding: 0 5%; /* Reduz o padding nas laterais */
+    gap: 8px; /* Diminui o espaçamento entre as colunas */
+  }
+
+  .alinhamento {
+    grid-column: span 6; /* Ocupa todas as 6 colunas em telas menores */
+    min-height: auto; /* Ajusta a altura automaticamente para evitar rolagem vertical */
+  }
+}

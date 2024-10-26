@@ -1,0 +1,184 @@
+
+// Container Principal
+.sobre-container {
+  padding: 15px;
+  background-color: var(--violet-100);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+// Menu de Navegação com Logo e Estilo de Sanduíche
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--violet-900);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  position: relative;
+
+  .logo img {
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
+  }
+
+  /* Ícone de Sanduíche - Esconde no Desktop */
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--violet-100);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  /* Itens do Menu */
+  .menu-items {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+
+    li a {
+      color: var(--violet-900);
+      background-color: var(--violet-200);
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      font-size: 14px;
+
+      &:hover {
+        background-color: var(--violet-600);
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+/* Responsividade e Estilo do Menu Sanduíche */
+@media (max-width: 768px) {
+  .nav-menu {
+    padding: 10px;
+
+    /* Ícone de Sanduíche visível no Mobile */
+    .menu-toggle {
+      display: block;
+    }
+
+    .menu-items {
+      /* Menu em estilo dropdown */
+      display: none; /* Escondido inicialmente */
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 10px;
+      background-color: var(--violet-700);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 45%;
+      gap: 10px;
+      align-items: center;
+    }
+
+    /* Mostra o menu quando o ícone de sanduíche é clicado */
+    .menu-toggle.active + .menu-items {
+      display: flex;
+    }
+
+    /* Estilo dos links no modo mobile */
+    .menu-items li a {
+      color: white; /* Cor do texto branca */
+      background-color: transparent; /* Remove o fundo */
+      padding: 8px 0; /* Ajusta o padding vertical */
+      border-radius: 0; /* Remove bordas arredondadas */
+      font-size: 1rem;
+    }
+  }
+}
+
+
+// Conteúdo da Seção Sobre
+.sobre-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px; /* Reduzido para manter a largura dentro dos limites */
+  width: 100%;
+  max-width: 100%; /* Previne largura extra */
+
+  /* Estilo da seção de texto */
+  .texto {
+    flex: 1;
+    margin-right: 10px;
+
+    h1 {
+      font-size: 2.4rem; /* Ajustado para responsividade */
+      color: var(--violet-900);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: 1.6rem; /* Ajustado para evitar transbordo */
+      color: var(--violet-500);
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--violet-900);
+      background-color: var(--violet-100);
+      padding: 12px; /* Reduzido para manter o layout */
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      max-width: 100%; /* Previne overflow */
+    }
+  }
+
+  /* Estilo da seção de imagem */
+  .imagem {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    border-radius: 20px;
+
+    img {
+      max-width: 80%; /* Ajuste para manter o layout responsivo */
+      height: auto;
+      
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+}
+
+// Responsividade para telas menores
+@media (max-width: 768px) {
+  .sobre-content {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .texto, .imagem {
+      width: 100%;
+      margin: 0;
+    }
+
+    .imagem {
+      margin-top: 20px;
+    }
+  }
+}

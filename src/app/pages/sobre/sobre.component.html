@@ -1,0 +1,36 @@
+<section class="sobre-container">
+  <nav class="nav-menu">
+    <div class="logo">
+      <img src="assets/image/logo.png" alt="Logo">
+    </div>
+    <button class="menu-toggle" aria-label="Menu" (click)="toggleMenu()" [class.active]="menuOpen">☰</button>
+    <ul class="menu-items" [class.open]="menuOpen">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#experiencia">Experiência</a></li>
+      <li><a href="#cursos">Cursos</a></li>
+      <li><a href="#detalhes">Detalhes</a></li>
+    </ul>
+  </nav>
+  
+
+
+  <!-- Seção de Apresentação -->
+  <div class="sobre-content">
+    <!-- Div do conteúdo textual -->
+    <div class="texto">
+      <h1>Stefany martins</h1>
+      <h2>Especialização: Desenvolvedora Full Stack</h2>
+      <p>
+        Sou uma desenvolvedora apaixonada por tecnologia, com interesses que
+        vão desde programação web até inteligência artificial. Nos tempos
+        livres, gosto de ler livros de ficção científica e explorar novas
+        tecnologias.
+      </p>
+    </div>
+
+    <!-- Div da imagem -->
+    <div class="imagem">
+      <img src="assets/image/tete01.png" alt="Imagem da Pessoa" />
+    </div>
+  </div>
+</section>
