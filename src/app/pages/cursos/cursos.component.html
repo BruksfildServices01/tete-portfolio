@@ -1,0 +1,24 @@
+<!-- Componente de Cursos -->
+<section class="cursos">
+  <h2 class="titulo-secao">Cursos</h2> <!-- Título da Seção -->
+  
+  <!-- Linha única de cursos -->
+  <div class="linha-curso">
+    <div
+      class="curso-balao"
+      *ngFor="let curso of cursos"
+      (click)="abrirModal(curso)"
+    >
+      <img [src]="curso.preview" alt="Prévia do Curso" />
+      <p>{{ curso.nomeCurso }}</p>
+    </div>
+  </div>
+
+  <!-- Modal para visualização do PDF -->
+  <div class="modal" *ngIf="modalAberto">
+    <div class="modal-content">
+      <button class="fechar-modal" (click)="fecharModal()">×</button>
+      <iframe [src]="pdfSafeUrl" width="100%" height="100%"></iframe>
+    </div>
+  </div>
+</section>

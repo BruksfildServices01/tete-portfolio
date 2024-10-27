@@ -1,0 +1,51 @@
+.detalhes {
+    background-color: var(--violet-900);
+    color: var(--violet-100);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  
+    .rodape-conteudo {
+      margin-bottom: 20px;
+  
+      .nome-site {
+        font-size: 1.8rem;
+        color: var(--violet-50);
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+  
+      p {
+        font-size: 1rem;
+        color: var(--violet-200);
+      }
+    }
+  
+    /* Estilo para os ícones de contato */
+    .icones-contato {
+      display: flex;
+      gap: 15px;
+  
+      a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        transition: transform 0.3s ease;
+  
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 15px;
+          /* Remover o filtro para exibir as cores normais */
+          /* filter: invert(85%); */
+        }
+  
+        &:hover {
+          transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+        }
+      }
+    }
+  }
+  
