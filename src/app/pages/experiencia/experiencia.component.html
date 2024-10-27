@@ -1,29 +1,30 @@
 <!-- Componente de Experiência -->
 <section class="experiencia">
-    <!-- Container Principal para exibir detalhes da experiência -->
-    <div class="container-experiencia">
-      <!-- Área de Informações do Cargo -->
-      <div class="cargo-info">
-        <h1>{{ cargoSelecionado.nomeCargo }}</h1>
-        <p>{{ cargoSelecionado.descricaoFuncao }}</p>
-      </div>
+  <h2 class="titulo-secao">Experiência</h2> <!-- Título da Seção -->
   
-      <!-- Área com Logo e Nome da Empresa -->
-      <div class="empresa-info">
-        <img [src]="cargoSelecionado.logoEmpresa" alt="Logo da Empresa">
-        <p>{{ cargoSelecionado.nomeEmpresa }}</p>
-      </div>
+  <!-- Container Principal para exibir detalhes da experiência -->
+  <div class="container-experiencia">
+    <!-- Área de Informações do Cargo -->
+    <div class="cargo-info">
+      <h1>{{ cargoSelecionado.nomeCargo }}</h1>
+      <p>{{ cargoSelecionado.descricaoFuncao }}</p>
     </div>
-  
-    <!-- Container de Opções com Balões de Interação -->
-    <div class="container-opcoes">
-      <!-- Cada balão representa uma opção de experiência -->
-      <div 
-        *ngFor="let cargo of experiencias" 
-        class="opcao-balao" 
-        (click)="selecionarCargo(cargo)">
-        <img [src]="cargo.logoEmpresa" alt="{{ cargo.nomeEmpresa }}">
-      </div>
+
+    <!-- Área com Logo e Nome da Empresa -->
+    <div class="empresa-info">
+      <img [src]="cargoSelecionado.logoEmpresa" alt="Logo da Empresa">
+      <p>{{ cargoSelecionado.nomeEmpresa }}</p>
     </div>
-  </section>
-  
+  </div>
+
+  <!-- Container de Opções com Balões de Interação -->
+  <div class="container-opcoes">
+    <!-- Cada balão representa uma opção de experiência -->
+    <div 
+      *ngFor="let cargo of experiencias" 
+      class="opcao-balao" 
+      (click)="selecionarCargo(cargo)">
+      <img [src]="cargo.logoEmpresa" alt="{{ cargo.nomeEmpresa }}">
+    </div>
+  </div>
+</section>
