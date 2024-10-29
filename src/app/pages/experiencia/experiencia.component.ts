@@ -6,6 +6,7 @@ interface Experiencia {
   descricaoFuncao: string;
   nomeEmpresa: string;
   logoEmpresa: string;
+  periodoTrabalho: string;  
 }
 
 @Component({

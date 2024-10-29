@@ -8,14 +8,16 @@
     <div class="cargo-info">
       <h1>{{ cargoSelecionado.nomeCargo }}</h1>
       <p>{{ cargoSelecionado.descricaoFuncao }}</p>
+      <p><strong>Período:</strong> {{ cargoSelecionado.periodoTrabalho }}</p> <!-- Campo de período -->
     </div>
-
+  
     <!-- Área com Logo e Nome da Empresa -->
     <div class="empresa-info">
       <img [src]="cargoSelecionado.logoEmpresa" alt="Logo da Empresa">
       <p>{{ cargoSelecionado.nomeEmpresa }}</p>
     </div>
   </div>
+  
 
   <!-- Container de Opções com Balões de Interação -->
   <div class="container-opcoes">

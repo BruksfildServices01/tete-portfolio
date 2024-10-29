@@ -5,6 +5,7 @@
   background-color: var(--violet-200);
   gap: 20px;
   margin-top: 20px;
+ 
 
   /* Estilo para o Título da Seção */
   .titulo-secao {
@@ -24,6 +25,7 @@
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    
 
     .cargo-info {
       margin-bottom: 15px;
@@ -58,39 +60,60 @@
   }
 
   /* Container de Opções com Balões de Interação */
+  /* Estilo atualizado para .container-opcoes */
+.container-opcoes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Garante 2 colunas por linha */
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  
+}
+
+/* Cada balão agora fica mais moderno e organizado */
+.opcao-balao {
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--violet-300), var(--violet-500), var(--secondary-300));
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 90%;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Responsividade para Mobile */
+@media (max-width: 768px) {
   .container-opcoes {
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-    align-items: flex-start;
-  
-    .opcao-balao {
-      padding: 10px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
-      cursor: pointer;
-      width: 80px;
-      height: 68px;
-      transition: transform 0.2s ease;
-      background: linear-gradient(135deg, var(--violet-300), var(--violet-500), var(--secondary-300));
-      background-size: 200% 200%; /* Aumenta o tamanho para o efeito */
-      animation: gradientAnimation 3s ease infinite; /* Aplica a animação */
-      
-  
-      img {
-        width: 100%;
-        height: auto;
-        border-radius: 20px;
-      }
-  
-      &:hover {
-        transform: scale(1.1);
-        animation: gradientAnimation 1.5s ease infinite; /* Acelera a animação no hover */
-      }
+    grid-template-columns: repeat(2, 1fr); /* Alinha os botões em pares no desktop */
+    gap: 20px;
+  }
+
+  .opcao-balao {
+    padding: 10px;
+
+    img {
+      width: 50px;
+      height: 50px;
     }
   }
+}
+
 }
 
 /* Animação de gradiente */
