@@ -1,24 +1,19 @@
-<!-- Componente de Cursos -->
 <section class="cursos">
-  <h2 class="titulo-secao">Cursos</h2> <!-- Título da Seção -->
-  
-  <!-- Linha única de cursos -->
-  <div class="linha-curso">
-    <div
-      class="curso-balao"
-      *ngFor="let curso of cursos"
-      (click)="abrirModal(curso)"
-    >
-      <img [src]="curso.preview" alt="Prévia do Curso" />
-      <p>{{ curso.nomeCurso }}</p>
-    </div>
+  <h2 class="titulo-secao">Cursos e Certificações</h2>
+
+  <!-- Botões de Categoria -->
+  <div class="categorias">
+    <button class="categoria-botao" (click)="selecionarCategoria('faculdade1')">Anhanguera</button>
+    <button class="categoria-botao" (click)="selecionarCategoria('ingles')">são judas universidade</button>
   </div>
 
-  <!-- Modal para visualização do PDF -->
-  <div class="modal" *ngIf="modalAberto">
-    <div class="modal-content">
-      <button class="fechar-modal" (click)="fecharModal()">×</button>
-      <iframe [src]="pdfSafeUrl" width="100%" height="100%"></iframe>
+  <!-- Área de Exibição de Cursos -->
+  <div class="curso-detalhe" *ngIf="cursoSelecionado">
+    <img [src]="cursoSelecionado.imagem" alt="{{ cursoSelecionado.nome }}" class="curso-imagem" />
+    <div class="curso-info">
+      <h3>{{ cursoSelecionado.nome }}</h3>
+      <p>{{ cursoSelecionado.descricao }}</p>
+      <a href="https://drive.google.com/drive/folders/1B93SaAYGW1-iL06AjGoW-vI_MPW_or-3?usp=drive_link" target="_blank" rel="noopener noreferrer" class="ver-mais">Ver Mais</a>
     </div>
   </div>
 </section>

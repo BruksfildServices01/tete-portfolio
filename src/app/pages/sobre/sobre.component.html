@@ -5,12 +5,13 @@
     </div>
     <button class="menu-toggle" aria-label="Menu" (click)="toggleMenu()" [class.active]="menuOpen">☰</button>
     <ul class="menu-items" [class.open]="menuOpen">
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#experiencia">Experiência</a></li>
-      <li><a href="#cursos">Cursos</a></li>
-      <li><a href="#detalhes">Detalhes</a></li>
+      <li><a href="#sobre" (click)="scrollToSection('sobre')">Sobre</a></li>
+      <li><a href="#experiencia" (click)="scrollToSection('experiencia')">Experiência</a></li>
+      <li><a href="#cursos" (click)="scrollToSection('cursos')">Cursos</a></li>
+      <li><a href="#detalhes" (click)="scrollToSection('detalhes')">Detalhes</a></li>
     </ul>
   </nav>
+  
   
 
 
@@ -19,12 +20,9 @@
     <!-- Div do conteúdo textual -->
     <div class="texto">
       <h1>Stefany martins</h1>
-      <h2>Especialização: Desenvolvedora Full Stack</h2>
+      <h2>Estudante de Marketing e Publicidade</h2>
       <p>
-        Sou uma desenvolvedora apaixonada por tecnologia, com interesses que
-        vão desde programação web até inteligência artificial. Nos tempos
-        livres, gosto de ler livros de ficção científica e explorar novas
-        tecnologias.
+        Sou uma pessoa persistente e dedicada, sempre buscando aprender coisas novas que despertam meu interesse. Cursando Letras (Inglês) e Publicidade e Propaganda, também atuo em atividades voluntárias, ensinando inglês e português básico. Apaixonada pela língua inglesa e pela comunicação, acredito no poder de ajudar e inspirar as pessoas ao meu redor.
       </p>
     </div>
 

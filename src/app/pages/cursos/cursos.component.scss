@@ -1,134 +1,111 @@
 .cursos {
-  padding: 20px;
+  padding: 30px;
   background-color: var(--violet-100);
   border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
 
   .titulo-secao {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: var(--violet-900);
-    text-align: center;
-    margin-bottom: 20px;
     font-weight: bold;
     text-transform: uppercase;
+    margin-bottom: 20px;
   }
 
-  .linha-curso {
+  /* Botões de Categoria */
+  .categorias {
     display: flex;
-    overflow-x: scroll;
+    justify-content: center;
     gap: 20px;
-    padding: 10px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    
-    &::-webkit-scrollbar {
-      display: none;
-    }
 
-    .curso-balao {
-      background-color: var(--violet-100);
-      padding: 15px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    .categoria-botao {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 25px;
+      background-color: var(--violet-300);
+      color: white;
+      font-weight: bold;
       cursor: pointer;
-      text-align: center;
-      width: 180px;
-      transition: transform 0.3s ease;
-      scroll-snap-align: start;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      font-size: 1rem;
+      min-width: 120px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 
       &:hover {
+        background-color: var(--violet-500);
         transform: scale(1.05);
       }
 
-      img {
-        width: 100%;
-        border-radius: 8px;
-        margin-bottom: 10px;
+      &.active {
+        background-color: var(--violet-600);
+        color: white;
+      }
+    }
+  }
+
+  /* Exibição do Curso Selecionado */
+  .curso-detalhe {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background-color: var(--violet-200);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .curso-imagem {
+      width: 100px;
+      height: auto;
+      border-radius: 12px;
+      margin-right: 15px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .curso-info {
+      text-align: left;
+      flex: 1;
+
+      h3 {
+        font-size: 1.5rem;
+        color: var(--violet-900);
+        margin-bottom: 8px;
       }
 
       p {
         font-size: 1rem;
-        color: var(--violet-900);
-      }
-    }
-  }
-}
-
-
-
-  /* Estilos do Modal */
-  .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    
-
-    .modal-content {
-      background-color: white;
-      border-radius: 8px;
-      max-width: 90%;
-      max-height: 90%;
-      width: 80vw;
-      height: 80vh;
-      padding: 15px;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-
-      /* iframe configurado para ocupar o máximo do espaço no modal */
-      iframe {
-        flex: 1;
-        width: 100%;
-        height: 100%;
-        border: none;
+        color: var(--violet-700);
+        line-height: 1.5;
+        margin-bottom: 12px;
       }
 
-      /* Botão de Fechamento Mais Visível */
-      .fechar-modal {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: red;
-        border: none;
-        font-size: 1.0rem;
-        cursor: pointer;
-        color: #333;
+      .ver-mais {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: var(--violet-600);
+        color: white;
+        border-radius: 20px;
         font-weight: bold;
-        padding: 5px;
-        border-radius: 50%;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 
         &:hover {
-          color: var(--violet-600);
-          background-color: rgba(0, 0, 0, 0.1);
+          background-color: var(--violet-700);
+          transform: scale(1.05);
         }
       }
     }
   }
-
-
-@media (max-width: 768px) {
-  .modal .modal-content {
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    padding: 10px;
-  }
-
-  /* Garante que o iframe ocupe toda a área disponível no modal */
-  .modal-content iframe {
-    width: 100%;
-    height: 100%;
-  }
 }
-
