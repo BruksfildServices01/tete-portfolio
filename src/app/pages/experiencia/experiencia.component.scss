@@ -72,14 +72,13 @@
 
 /* Cada balão agora fica mais moderno e organizado */
 .opcao-balao {
-  padding: 15px;
+  padding: 2px;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   background: linear-gradient(135deg, var(--violet-300), var(--violet-500), var(--secondary-300));
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  width: 100px;
-  height: 80px;
+ 
   display: flex;
   align-items: center;
   justify-content: center;
