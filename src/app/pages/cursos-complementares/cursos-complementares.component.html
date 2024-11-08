@@ -1,0 +1,39 @@
+<section class="cursos-complementares">
+  <h2>Cursos Complementares</h2>
+
+  <!-- Filtro de Categorias -->
+  <div class="filtro-categorias">
+    <button (click)="filtrarCursos('Todos')">Todos</button>
+    <button *ngFor="let categoria of categorias" (click)="filtrarCursos(categoria)">{{ categoria }}</button>
+  </div>
+
+  <!-- Grid de Certificados Paginado -->
+  <div class="certificados-grid">
+    <div *ngFor="let curso of getCursosPaginaAtual()" class="certificado-card" (click)="openModal(curso)">
+      <img [src]="curso.imagemCertificado" alt="{{ curso.nomeCurso }}" />
+      <h3>{{ curso.nomeCurso }}</h3>
+      <p>{{ curso.descricao }}</p>
+    </div>
+  </div>
+
+  <!-- Navegação de Paginação -->
+  <div class="paginacao">
+    <button (click)="paginaAnterior()" [disabled]="paginaAtual === 1">Anterior</button>
+    <span>Página {{ paginaAtual }}</span>
+    <button (click)="proximaPagina()" [disabled]="(paginaAtual * cursosPorPagina) >= cursosFiltrados.length">Próxima</button>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal-overlay" *ngIf="isModalOpen" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="closeModal()">×</button>
+    <div class="modal-header">
+      <h3>{{ selectedCurso?.nomeCurso }}</h3>
+    </div>
+    <div class="modal-body">
+      <img [src]="selectedCurso?.imagemCertificado" alt="Certificado" />
+      <p>{{ selectedCurso?.descricao }}</p>
+    </div>
+  </div>
+</div>
